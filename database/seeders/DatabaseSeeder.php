@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
+        $this->call(CategorySeeder::class);
+
         User::firstOrCreate(
             ['email' => 'test@example.com'],
             [
@@ -22,6 +24,5 @@ class DatabaseSeeder extends Seeder
                 'role' => 'User',
             ]
         );
-
     }
 }
